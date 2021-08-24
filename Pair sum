@@ -1,0 +1,24 @@
+def pair_sum(arr,k):
+    
+    if len(arr)<2:
+        return
+    
+    # Sets for tracking
+    seen = set()
+    output = set()
+    
+     # For every number in array
+    for num in arr:
+        target =k-num
+         # Set target difference
+       
+        
+        # Add it to set if target hasn't been seen
+        if target not in seen:
+            seen.add(num)
+        
+        else:
+            # Add a tuple with the corresponding pair
+            output.add( (min(num,target),  max(num,target)) )
+            
+    return len(output)
